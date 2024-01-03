@@ -1,24 +1,24 @@
+// import {useState} from 'react';
 import './App.css';
-
 import Home from './Home/Home';
+import About from './About/About'
+import Layout from './Layout/Layout';
+import { Routes, Route } from 'react-router-dom';
+import Search from './Search/Search';
+
 
 function App() {
-  const clickBouton = () => alert('bouton cliqué')
+  
   return (
     <div className="App">
-      <Home/>
-      <header className="App-header">
-      <img src="../images/dwwm_1.png" className="App-logo" alt="logo" />
-              <p>
-        TP React Développeur Web et Web Mobile
-        </p>
-        <button className="App-button" 
-        onClick={clickBouton
-        // onClick={ event => alert(event.target.id)
-        }>
-          Modifier l'animation
-          </button>
-      </header>
+    <Routes>
+      <Route path='/' element={<Layout/>} >
+      <Route index element={<Home/>} />
+      <Route path="/about" element={<About/>} />
+      <Route path='/search' element={<Search/>}/>
+      </Route>
+    </Routes>
+      
     </div>
   );
 }
