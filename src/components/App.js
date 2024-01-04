@@ -5,6 +5,7 @@ import About from './About/About'
 import Layout from './Layout/Layout';
 import { Routes, Route } from 'react-router-dom';
 import Search from './Search/Search';
+import List from './List/List'
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
       <Route index element={<Home/>} />
       <Route path="/about" element={<About/>} />
       <Route path='/search' element={<Search/>}/>
+      <Route path='/List/:data' element={<List/>}/>
       </Route>
     </Routes>
       

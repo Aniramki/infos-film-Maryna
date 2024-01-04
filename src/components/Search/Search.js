@@ -1,14 +1,17 @@
+import { useNavigate } from 'react-router-dom'
 import './Search.css'
 
 
 function Search() {
+
+    const navigate = useNavigate()
     
     const handleSubmit = (e) => {
         const form = e.target
         const formData = new FormData(form)
         console.log(formData);
         console.log(formData.get('search'));
-        
+        navigate(`/List/${formData.get('search')}`)
     }
      return (
         <div className='search'>
